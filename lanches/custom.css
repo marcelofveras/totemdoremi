@@ -1,0 +1,311 @@
+body{
+
+    background:linear-gradient(
+        180deg,
+        #eef2ff 0%,
+        #f8fafc 100%
+    );
+
+    color:#111827;
+
+    font-family:Inter, sans-serif;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar{
+
+    height:100vh;
+
+    width:260px;
+
+    position:fixed;
+
+    overflow-y:auto;
+
+    background:linear-gradient(
+        180deg,
+        #111827 0%,
+        #1e293b 100%
+    );
+
+    color:white;
+
+    padding:20px 0;
+
+    box-shadow:4px 0 20px rgba(0,0,0,0.12);
+}
+
+.school-logo{
+
+    width:130px;
+
+    max-width:100%;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.08);
+
+    padding:10px;
+}
+
+.sidebar-title{
+
+    font-size:0.95rem;
+
+    color:#e5e7eb;
+
+    font-weight:600;
+
+    letter-spacing:0.4px;
+}
+
+.sidebar-subtitle{
+
+    color:white;
+
+    font-size:1.3rem;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+}
+
+.sidebar-divider{
+
+    height:1px;
+
+    background:rgba(255,255,255,0.08);
+
+    margin:18px 0 22px;
+}
+
+.sidebar-section-title{
+
+    color:#9ca3af;
+
+    text-transform:uppercase;
+
+    font-size:0.75rem;
+
+    letter-spacing:1px;
+
+    font-weight:700;
+}
+
+.sidebar .nav-link{
+
+    color:#d1d5db;
+
+    padding:12px 18px;
+
+    margin:4px 12px;
+
+    border-radius:14px;
+
+    font-weight:500;
+
+    transition:0.2s;
+
+    text-align:left;
+}
+
+.sidebar .nav-link:hover{
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+}
+
+.sidebar .nav-link.active{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color:white;
+
+    box-shadow:0 8px 18px rgba(37,99,235,0.28);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.content{
+
+    margin-left:260px;
+
+    padding:34px;
+}
+
+#periodTitle{
+
+    font-size:2rem;
+
+    font-weight:800;
+
+    color:#111827;
+}
+
+/* =========================================
+   STUDENT CARDS
+========================================= */
+
+.student-card{
+
+    border:none;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    background:white;
+
+    transition:0.25s;
+
+    box-shadow:0 6px 20px rgba(15,23,42,0.06);
+}
+
+.student-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 30px rgba(15,23,42,0.12);
+}
+
+.student-photo{
+
+    height:240px;
+
+    width:100%;
+
+    object-fit:contain;
+
+    object-position:center center;
+
+    background:#f1f5f9;
+
+    padding:8px;
+}
+
+.student-card .card-body{
+
+    padding:18px;
+
+    min-height:120px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.student-card .card-title{
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#0f172a;
+}
+
+/* =========================================
+   BADGE
+========================================= */
+
+.snack-badge{
+
+    display:inline-block;
+
+    background:#eff6ff;
+
+    color:#1d4ed8;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:0.85rem;
+
+    font-weight:600;
+}
+
+/* =========================================
+   TEXTS
+========================================= */
+
+.text-muted{
+
+    color:#64748b !important;
+}
+
+/* =========================================
+   ALERTS
+========================================= */
+
+.alert{
+
+    border:none;
+
+    border-radius:18px;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar{
+
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#cbd5e1;
+
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+    .sidebar{
+
+        position:relative;
+
+        width:100%;
+
+        height:auto;
+    }
+
+    .content{
+
+        margin-left:0;
+
+        padding:20px;
+    }
+
+    .student-photo{
+
+        height:190px;
+    }
+
+    #periodTitle{
+
+        font-size:1.5rem;
+    }
+}
