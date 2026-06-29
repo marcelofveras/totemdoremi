@@ -1,3 +1,3 @@
 <?php
-header("Location:/menu");
+header("Location:/totemdoremi/menu");
 ?>
