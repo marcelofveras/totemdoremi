@@ -23,7 +23,7 @@ async function loadClass(className, element) {
 	try {
 
 		const response = await fetch(
-			'/api/ficha.php?turma=' + encodeURIComponent(className)
+			'api/ficha.php?turma=' + encodeURIComponent(className)
 		);
 
 		const students = await response.json();
