@@ -39,7 +39,7 @@ async function loadPeriodo(
     try {
 
 const response = await fetch(
-    'lanches/api/lanches.php?periodo='
+    '/api/lanches.php?periodo='
     + encodeURIComponent(periodo)
 );
 
