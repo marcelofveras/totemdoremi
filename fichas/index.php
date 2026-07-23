@@ -87,7 +87,7 @@
   <div class="mb-4">
 
     <a
-        href="/menu"
+        href="/totemdoremi/menu"
         class="back-button"
     >
         ← Voltar ao Menu

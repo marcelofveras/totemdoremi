@@ -283,6 +283,39 @@
 
             </div>
 
+            <!-- ANIVERSARIANTES -->
+
+            <div class="col-md-4">
+
+                <a
+                    href="/totemdoremi/aniversariantes"
+                    class="menu-card d-block"
+                >
+
+                    <div class="menu-card-body text-center">
+
+                        <div class="menu-icon">
+                            🎂
+                        </div>
+
+                        <div class="menu-title">
+                            Aniversariantes do Mês
+                        </div>
+
+                        <div class="menu-description">
+
+                            Selecione o mês e veja
+                            os alunos aniversariantes
+                            ativos.
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
         </div>
 
     </div>

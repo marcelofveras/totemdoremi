@@ -17,6 +17,7 @@ class BD {
     function query($qry) {
 
         $this->con = mysqli_connect($this->host,$this->user,$this->pass,$this->db);
+        mysqli_set_charset($this->con, 'utf8mb4');
         $this->exec=mysqli_query($this->con, $qry);
         $this->retorno = array();
         
