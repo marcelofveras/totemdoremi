@@ -88,6 +88,85 @@ function openStudentModal(student) {
 	document.getElementById('modalStudentName').innerText =
 		student.fullName;
 
+	const classShiftContainer =
+		document.getElementById('modalStudentClassShift');
+
+	classShiftContainer.innerHTML = `
+        <span class="badge text-bg-primary me-2">Turma: ${escapeHtml(student.turma || 'Nao informada')}</span>
+        <span class="badge text-bg-secondary">Turno: ${escapeHtml(student.turno || 'Nao informado')}</span>
+    `;
+
+	const medicalHistoryContainer =
+		document.getElementById('medicalHistoryContainer');
+
+    const allergiesContainer =
+        document.getElementById('allergiesContainer');
+
+	const doencas = Array.isArray(student.doencas)
+		? student.doencas
+		: [];
+
+	if (doencas.length === 0) {
+
+		medicalHistoryContainer.innerHTML = `
+            <div class="alert alert-secondary mb-0">
+                Nenhuma doenca informada na ficha medica.
+            </div>
+        `;
+
+	} else {
+
+		medicalHistoryContainer.innerHTML = `
+            <ul class="mb-0">
+                ${doencas.map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+            </ul>
+        `;
+	}
+
+	const alergias = String(student.alergias || '').trim();
+
+	if (alergias === '') {
+
+		allergiesContainer.innerHTML = `
+            <div class="alert alert-secondary mb-0">
+                Nenhuma alergia conhecida
+            </div>
+        `;
+	} else {
+
+		allergiesContainer.innerHTML = `
+            <div class="alert alert-light border mb-0">
+                ${escapeHtml(alergias)}
+            </div>
+        `;
+	}
+
+	const prescriptionContainer =
+		document.getElementById('prescriptionContainer');
+
+	if (student.receita && student.receita.exists && student.receita.url) {
+
+		prescriptionContainer.innerHTML = `
+            <a href="${encodeURI(student.receita.url)}"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-outline-primary btn-sm">
+                Baixar receita medica
+            </a>
+            <div class="small text-muted mt-2">
+                Arquivo: ${escapeHtml(student.receita.fileName || '')}
+            </div>
+        `;
+
+	} else {
+
+		prescriptionContainer.innerHTML = `
+            <div class="alert alert-secondary mb-0">
+                Nao existe receita medica disponivel.
+            </div>
+        `;
+	}
+
 	// =========================
 	// PAIS
 	// =========================
@@ -259,4 +338,18 @@ function formatCPF(cpf) {
         /(\d{3})(\d{3})(\d{3})(\d{2})/,
         '$1.$2.$3-$4'
     );
+}
+
+function escapeHtml(value) {
+
+    if (value === null || value === undefined) {
+        return '';
+    }
+
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
 }

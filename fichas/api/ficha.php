@@ -22,6 +22,11 @@ foreach($rs as $aluno){
         "lastName" => $aluno["lastname"],
         "fullName" => $aluno["nome"],
         "cpf" => $aluno["cpf"],
+        "turma" => $aluno["turma"] ?? "",
+        "turno" => $aluno["turno"] ?? "",
+        "doencas" => $aluno["doencas"] ?? [],
+        "alergias" => trim((string)($aluno["alergias"] ?? "")),
+        "receita" => $aluno["receita"] ?? ["exists" => false, "url" => null, "fileName" => null],
         "parents"=> array("pai"=>array("cpf"=>$aluno["cpf_pai"],"nome"=>$aluno["nome_pai"],"telefone"=>$aluno["telefone_pai"]),
                           "mae"=>array("cpf"=>$aluno["cpf_mae"],"nome"=>$aluno["nome_mae"],"telefone"=>$aluno["telefone_mae"])
         ),

@@ -123,10 +123,42 @@
             <div class="col-md-9">
               <h3 id="modalStudentName"></h3>
               <p class="text-muted mb-0">Informações completas do aluno</p>
+              <div id="modalStudentClassShift" class="mt-2"></div>
             </div>
           </div>
 
           <hr>
+
+          <div class="row g-4 mb-4">
+
+            <div class="col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <div class="section-title mb-3">Doenças Já Contraídas</div>
+                  <div id="medicalHistoryContainer"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <div class="section-title mb-3">Receita Médica</div>
+                  <div id="prescriptionContainer"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <div class="section-title mb-3">Alergias Conhecidas</div>
+                  <div id="allergiesContainer"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
 
           <!-- Pais -->
           <div class="mb-4">
